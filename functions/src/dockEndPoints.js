@@ -24,7 +24,7 @@ export async function deleteDock(req, res){
 
 export async function updateDock(req, res) {
     try {
-      const dockId = { _id: new ObjectId(req.params.dockId) };
+      const dockId = { "_id": new ObjectId(req.params.dockId) };
       const rateDock = { $set: req.body };
       const returnDock = { returnNewDocument: true };
   
