@@ -15,6 +15,12 @@ export async function getAllDocks(req, res) {
         res.send(docks)
 }
 
+export async function getCityDocks(req, res) {
+      const { cityValue } =req.params
+      const docks = await coll.find({ "city": cityValue }).toArray()
+      res.send(docks)
+}
+
 export async function deleteDock(req, res){
     const dockId = {"_id": new ObjectId(req.params.dockId)}
     
