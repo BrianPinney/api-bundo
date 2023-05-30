@@ -42,28 +42,6 @@ export async function deleteDock(req, res){
     await coll.findOneAndDelete(dockId)
     res.send()
 }
-
-// export async function updateDock(req, res) {
-//     try {
-//       const dockId = { "_id": new ObjectId(req.params.dockId) };
-
-//       const rateDock = { $set: req.body };
-//       const returnDock = { returnDocument: false };
-  
-//       //await coll.updateOne(dockId, rateDock, returnDock
-     
-//       await coll.updateOne(
-       
-//         { $push: {rating: rateDock.rating}}
-//         );
-
-
-  
-//       res.send({message: "Rating Achievement Unlocked 🎖️"});
-//     } catch (err) {
-//       console.error(err);
-//     }
-//   }
   
 export async function updateDock(req, res) {
   try {
@@ -79,7 +57,7 @@ export async function updateDock(req, res) {
 
 
     let avgRating = 0
-    console.log('bruiN',updateDock)
+    
 
     updateDock.ratings.map(rating => {
       if (rating) {
